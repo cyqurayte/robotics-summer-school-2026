@@ -30,10 +30,16 @@ int main() {
 
 ## Sync project to the robot
 
-To run your project on the robot, first you need to push the files onto the robot:
+To run your project on the robot, first you need to copy the files onto the robot:
 
 ```bash
 rsync -avz --progress ./ jetson@<IP>:/home/jetson/nano-usb/robotics-summer-school-2026/
+```
+
+Alternative (if rsync is not available) use scp:
+
+```bash
+scp -r ./* jetson@<IP>:/home/jetson/nano-usb/robotics-summer-school-2026/
 ```
 
 Then connect to the robot via SSH in the terminal:
