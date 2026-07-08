@@ -36,9 +36,21 @@ To run your project on the robot, first you need to push the files onto the robo
 rsync -avz --progress ./ jetson@<IP>:/home/jetson/nano-usb/robotics-summer-school-2026/
 ```
 
+Then connect to the robot via SSH in the terminal:
+
+```bash
+ssh jetson@<IP>
+```
+
+and change to the project directory:
+
+```bash
+cd nano-usb/robotics-summer-school-2026/
+```
+
 ## Build and run
 
-In a terminal, from this folder, run:
+In the terminal, inside the project folder, run:
 
 ```bash
 cmake -B build
@@ -56,9 +68,13 @@ cmake --build build
 
 ## Commands you can use
 
-Speeds go from **-100** (full reverse) to **100** (full forward). `50` is half
-speed. If you type a number that is too big or too small, the robot uses the
-closest allowed value.
+Speeds go from **100** (full forward) to **-100** (full reverse) , `50` is half
+speed forward.
+
+If you type a number that is too big or too small, the robot uses the
+closest allowed value. 0 will also stop the robot.
+
+*NOTE:* if the number is too low, the robot might not move, because the motors get not enough power.
 
 | Command | What it does |
 |--------|--------------|
