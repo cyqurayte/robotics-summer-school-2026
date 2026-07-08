@@ -28,6 +28,14 @@ int main() {
 - `wait(...)` pauses your program so the robot keeps doing the last thing.
 - Always `stop()` when you are done!
 
+## Sync project to the robot
+
+To run your project on the robot, first you need to push the files onto the robot:
+
+```bash
+rsync -avz --progress ./ jetson@<IP>:/home/jetson/nano-usb/robotics-summer-school-2026/
+```
+
 ## Build and run
 
 In a terminal, from this folder, run:
